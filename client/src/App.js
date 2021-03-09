@@ -70,7 +70,7 @@ export default class App extends React.Component {
     return posts.map((post, index) => (
       <div key={index} className="blog-post_display">
         <h3>{index + 1}. {post.title}</h3>
-        <p>{post.body} 1 </p>
+        <p>{post.body}</p>
       </div>
     ))
   }
@@ -83,7 +83,7 @@ export default class App extends React.Component {
     // console.log('state:', this.state)
     return (
       <div className="app">
-        <h2>Welcome to my App </h2>
+        <h2>This is a MERN deployed App </h2>
         <form onSubmit={this.submit}>
           <div className="form-input">
             <input
