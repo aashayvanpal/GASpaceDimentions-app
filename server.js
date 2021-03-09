@@ -10,12 +10,12 @@ const app = express()
 const PORT = process.env.PORT || 5001 // Deployment Step 1
 
 // Step1 connection
-// MONGODB_URI = 'mongodb+srv://aashay:9AxbFqDNdqiAWWeZ@cluster-main.u9ycr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+MONGODB_URI = 'mongodb+srv://aashay:9AxbFqDNdqiAWWeZ@cluster-main.u9ycr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
-// mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 // for local database
 // mongoose.connect('mongodb://localhost/mern_youtube', {
@@ -24,10 +24,10 @@ const PORT = process.env.PORT || 5001 // Deployment Step 1
 // })
 
 // Deployment Step2
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
 
 
 // mongoose.connection.on('connected', () => {
