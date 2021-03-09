@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 5001 // Deployment Step 1
 
 // Step1 connection
 
-mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
 
 // for local database
 // mongoose.connect('mongodb://localhost/mern_youtube', {
@@ -23,10 +23,10 @@ mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
 // })
 
 // Deployment Step2
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 
 // mongoose.connection.on('connected', () => {
