@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5001 // Deployment Step 1
 
 // Step1 connection
 
+// MONGODB_URI (string from heroku) comes here
+
 // mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
