@@ -1,11 +1,16 @@
 const express = require('express')
-const BlogPost = require('../models/blogPost.js')
-
+const Property = require('../models/Property.js')
 const router = express.Router()
 // Routes
-router.get('/', (req, res) => {
 
-    BlogPost.find({})
+// function isLoggedIn(req, res, next) {
+//     req.user ? next() : res.sendStatus(401)
+// }
+
+
+router.get('/properties/:id', (req, res) => {
+    console.log("check for user id in this =>", req.params.id)
+    Property.find({ "userid": req.params.id })
         .then((data) => {
             console.log('data:', data)
             res.json(data)
@@ -16,31 +21,41 @@ router.get('/', (req, res) => {
         })
 })
 
-router.post('/save', (req, res) => {
-    // console.log('request.body', req.body)
+router.post('/save/property', (req, res) => {
+    console.log('request.body', req.body)
     const data = req.body
 
-    const newBlogPost = new BlogPost(data)
+    const newProperty = new Property(data)
 
-    newBlogPost.save(error => {
+    newProperty.save(error => {
         if (error) {
             res.status(500).json({ msg: 'sorry internal server error' })
             return
         }
         return res.json({
-            msg: 'we have recieved BlogPost data!'
+            msg: 'we have recieved property data!'
         })
     })
 
 
 })
 
-router.get('/name', (req, res) => {
-    const data = {
-        username: 'user2',
-        age: 50
-    }
-    res.json(data)
-})
+router.delete('/deleteProperty/:id', (req, res) => {
+    const { id } = req.params;
+    console.log("delete this id:", id)
+    Property.findByIdAndDelete(id)
+        .then(property => {
+            if (property) {
+
+                res.json(property)
+            } else {
+                res.json({})
+            }
+        })
+        .catch(err => {
+            res.json(err)
+        })
+});
+
 
 module.exports = router

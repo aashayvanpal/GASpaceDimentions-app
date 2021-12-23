@@ -1,10 +1,14 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 .app {
   padding: 10px;
 }
-
+/* 
 form {
   width: 50%;
-}
+} */
 
 .form-input {
   margin: 10px 0px;
@@ -12,16 +16,21 @@ form {
 
 .form-input input,
 .form-input textarea {
-  width: 100%;
+  width: 70%;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
   border: 1px solid lightgray;
   padding: 0.375rem 0.75rem;
   outline: none;
-}
 
-button {
+}
+table td {
+  border: 2px solid black;
+  margin:0px;
+  padding: 10px;
+}
+button , .button-black , .button-red {
   background-color: blue;
   color: white;
   padding: 0.375rem 0.75rem;
@@ -36,4 +45,12 @@ button {
   margin: 5px 0px;
   border-radius: 4px;
   padding: 10px;
+}
+
+.button-red {
+  background-color: red;
+}
+
+.button-black {
+  background-color: rgb(0, 0, 0);
 }
