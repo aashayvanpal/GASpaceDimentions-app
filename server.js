@@ -7,6 +7,7 @@ const passport = require('passport')
 const session = require('express-session')
 require('./auth.js')
 const routes = require('./routes/api.js')
+const res = require('express/lib/response')
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -53,12 +54,10 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'prof
 
 app.get('/google/callback',
     passport.authenticate('google', {
-        // successRedirect: 'http://localhost:3000/home',
+        successRedirect: res.redirect('..'),
         // successRedirect: '/',
         failureRedirect: '/auth/failed'
-    }), function (req, res) {
-        res.redirect('https://gaspacedimentions-app.herokuapp.com/home');
-    })
+    }))
 
 
 
