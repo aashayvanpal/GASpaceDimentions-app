@@ -54,7 +54,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'prof
 
 app.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: res.redirect('..'),
+        successRedirect: '',
         // successRedirect: '/',
         failureRedirect: '/auth/failed'
     }))
