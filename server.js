@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001
 //     useUnifiedTopology: true
 // })
 
-mongoose.connect(process.env.MONGODB_URI , {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/GASpaceDimentions-app', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -53,15 +53,16 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'prof
 
 app.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: process.env.SUCCESS_REDIRECT,
+        // successRedirect: 'http://localhost:3000/home',
         // successRedirect: '/',
         failureRedirect: '/auth/failed'
-    })
+    },function (req, res) {
+        res.redirect('https://gaspacedimentions-app.herokuapp.com/home');
+      })
 )
 
 
 
-app.get('/home', (req, res) => { res.redirect('https://gaspacedimentions-app.herokuapp.com:3000/home') })
 app.get('/auth/failed', (req, res) => { res.send('something went wrong!') })
 
 app.get('/api/logout', (req, res) => {
