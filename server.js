@@ -56,10 +56,10 @@ app.get('/google/callback',
         // successRedirect: 'http://localhost:3000/home',
         // successRedirect: '/',
         failureRedirect: '/auth/failed'
-    },function (req, res) {
+    }), function (req, res) {
         res.redirect('https://gaspacedimentions-app.herokuapp.com/home');
-      })
-)
+    })
+
 
 
 
