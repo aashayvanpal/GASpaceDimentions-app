@@ -58,7 +58,7 @@ export default class App extends React.Component {
               </button>
             </Route>
 
-            <Route path="/home" component={() => <PropertyList username={this.state.username}
+            <Route path="https://gaspacedimentions-app.herokuapp.com/home" component={() => <PropertyList username={this.state.username}
               userid={this.state.userid}
               profilePic={this.state.profilePic} />} />
           </Switch>
