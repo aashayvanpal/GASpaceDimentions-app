@@ -63,6 +63,8 @@ app.get('/google/callback',
 
 app.get('/auth/failed', (req, res) => { res.send('something went wrong!') })
 
+app.get('/home',(req,res)=>{ res.redirect('https://gaspacedimentions-app.herokuapp.com/home')})
+
 app.get('/api/logout', (req, res) => {
     req.logout()
     console.log('logged out backend')
