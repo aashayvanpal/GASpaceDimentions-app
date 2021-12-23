@@ -46,16 +46,15 @@ function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401)
 }
 
-app.get('/', (req, res) => {
-    res.send('<a href="/auth/google"><button>Authenticate with google</button></a>')
-})
+// app.get('/', (req, res) => {
+//     res.send('<a href="/auth/google"><button>Authenticate with google</button></a>')
+// })
 // app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }))
 app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }))
 
 app.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: '',
-        // successRedirect: '/',
+        successRedirect: '/',
         failureRedirect: '/auth/failed'
     }))
 
