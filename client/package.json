@@ -35,5 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"https://gaspacedimentions-app.herokuapp.com/home"
+  "proxy":"http://localhost:5001/"
 }
