@@ -61,7 +61,7 @@ app.get('/google/callback',
 
 
 
-app.get('/api/home', (req, res) => { res.redirect('/home') })
+app.get('/api/home', (req, res) => { res.redirect('https://gaspacedimentions-app.herokuapp.com:3000/home') })
 app.get('/auth/failed', (req, res) => { res.send('something went wrong!') })
 
 app.get('/api/logout', (req, res) => {
